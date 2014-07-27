@@ -1,0 +1,7 @@
+gyouth_user:
+    resource: "@GyouthUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gyouth_home:
+    resource: "@GyouthHomeBundle/Resources/config/routing.yml"
+    prefix:   /

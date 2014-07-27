@@ -1,0 +1,7 @@
+parameters:
+#    gyouth_user.example.class: Gyouth\Bundle\UserBundle\Example
+
+services:
+#    gyouth_user.example:
+#        class: %gyouth_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

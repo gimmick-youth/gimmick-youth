@@ -1,0 +1,3 @@
+gyouth_home_homepage:
+    path:     /
+    defaults: { _controller: GyouthHomeBundle:Default:index }

@@ -1,0 +1,41 @@
+{% extends 'MopaBootstrapBundle::base_less.html.twig' %}
+
+{% block head_script %}
+{% javascripts
+    'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
+%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock head_script %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+	<div class="navbar-header">
+		<div class="navbar-brand">
+			<a href="{{ path('pinme') }}">
+				<img src="{{ asset('bundles/pinmehome/images/pinme.png') }}" alt="PinMe"/>
+			</a>
+		</div>
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-main">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<div class="collapse navbar-collapse" id="nav-main">
+		<ul class="nav navbar-nav">
+			<li><a href="{{ path('pinme') }}#main">{{ 'So geht\'s'|trans }}</a></li>
+			<li><a href="{{ path('pinme') }}#begin">{{ 'So einfach'|trans }}</a></li>
+			<li><a href="{{ path('pinme') }}#kompakt">{{ 'So clever'|trans }}</a></li>
+		</ul>
+	</div>
+		
+	<ul class="nav navbar-nav navbar-right">
+		{% block login_form %}
+		{% endblock login_form %}
+	</ul>
+    </div>
+</nav>
+{% endblock navbar %}

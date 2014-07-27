@@ -1,0 +1,74 @@
+/* Basic */
+@font-face {
+}
+
+body {
+	/*
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	*/
+	font-family: custom_font;
+	font-size: 13px;
+	line-height: 1.42857143;
+}
+
+/* Main and Main Wrapper */
+.main {
+}
+
+@media screen and (min-width: 1024px) {
+	.main {
+	}
+}
+
+/* Text */
+.text-justify {
+	text-align: justify;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.paragraph {
+	text-indent: 35px;
+	margin: 5px 5px 10px 5px;
+}
+
+/* PinMe default class */
+.hidden-element {
+   display: none;
+}
+
+.option {
+    cursor: pointer;
+}
+
+.selected {
+    cursor: default;
+    opacity: 0.2;
+}
+
+/* Footer */
+footer {
+	z-index: 16;
+}
+
+#footer-wrapper {
+	background-color: #262d2f;
+	color: #fff;
+}
+
+#footer-wrapper a {
+	text-decoration: none;
+}
+
+#footer-content {
+	min-height: 62px;
+	padding-top: 20px;
+}
+
+/* Miscellaneous */

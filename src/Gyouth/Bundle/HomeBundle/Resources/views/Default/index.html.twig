@@ -1,0 +1,124 @@
+{% extends 'GyouthHomeBundle::base.html.twig' %}
+
+{% block head_style %}
+    {{ parent() }}
+    {% stylesheets
+       filter='cssrewrite'
+		'@GyouthHomeBundle/Resources/public/css/gy-default.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block head_script %}
+	{{ parent() }}
+{% endblock head_script %}
+
+{% block inline_script %}
+{% endblock inline_script %}	
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block page_header %}{% endblock page_header %}
+
+{% block container_class %}container-full{% endblock container_class %}
+
+{% block content_row %}
+<style>
+.home-slide {
+	height: 650px;
+}
+.slider-0 {
+	background: url({{ asset("bundles/gyouthhome/images/network.jpg") }}) no-repeat center center;
+}
+.slider-1 {
+	background: url({{ asset("bundles/gyouthhome/images/growing.jpg") }}) no-repeat center center;
+}
+.slider-2 {
+	background: url({{ asset("bundles/gyouthhome/images/different.jpg") }}) no-repeat center center;
+}
+.slider-3 {
+	background: url({{ asset("bundles/gyouthhome/images/creativity.jpg") }}) no-repeat center center;
+}
+@media screen and (max-width: 1024px) {
+	.home-slide {
+		background-size: contain;
+		height: 450px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.home-slide {
+		background-size: cover;
+		height: 550px;
+	}
+}
+</style>
+<div class="full-container" style="margin-top: 0px;">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators 
+	  <ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	  </ol>
+	  -->
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+		<div class="item active">
+		  <div class="home-slide slider-0"/>
+		  </div>
+		</div>
+		<div class="item">
+		  <div class="home-slide slider-1"/>
+		  </div>
+		</div>
+		<div class="item">
+		  <div class="home-slide slider-2"/>
+		  </div>
+		</div>
+		<div class="item">
+		  <div class="home-slide slider-3"/>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- Controls
+	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	   -->
+	</div>
+</div>
+<div class="container" style="margin-top: -30px;">
+	<div style="height: 30px;">
+	</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-6 slide-nav">
+			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="0">
+			Build the network
+			</div>
+		</div>
+		<div class="col-sm-3 col-xs-6 slide-nav">
+			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="1">
+			Growing with us
+			</div>
+		</div>
+		<div class="col-sm-3 col-xs-6 slide-nav">
+			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="2">
+			Be different
+			</div>
+		</div>
+		<div class="col-sm-3 col-xs-6 slide-nav">
+			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="3">
+			Let your creativity flow
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content_row %}
+
+{% block footer %}
+	{% include 'GyouthHomeBundle::footer.html.twig' %}
+{% endblock footer %}
