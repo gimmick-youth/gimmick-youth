@@ -28,16 +28,29 @@
 .home-slide {
 	height: 650px;
 }
+.slide-nav {
+	padding: 0 !important;
+}
+.nav-mark {
+	background-size:cover;
+	height: 67px;
+}
+.nav-mark.active {
+	background: url('bundles/gyouthhome/images/default/slider-nav-active.png') no-repeat center center;
+}
+.nav-mark.inactive {
+	background: url('bundles/gyouthhome/images/default/slider-nav-inactive.png') no-repeat center center;
+}
 .slider-0 {
 	background: url({{ asset("bundles/gyouthhome/images/network.jpg") }}) no-repeat center center;
 }
 .slider-1 {
 	background: url({{ asset("bundles/gyouthhome/images/growing.jpg") }}) no-repeat center center;
 }
-.slider-2 {
+.slider-3 {
 	background: url({{ asset("bundles/gyouthhome/images/different.jpg") }}) no-repeat center center;
 }
-.slider-3 {
+.slider-2 {
 	background: url({{ asset("bundles/gyouthhome/images/creativity.jpg") }}) no-repeat center center;
 }
 @media screen and (max-width: 1024px) {
@@ -46,15 +59,15 @@
 		height: 450px;
 	}
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
 	.home-slide {
 		background-size: cover;
 		height: 550px;
 	}
 }
 </style>
-<div class="full-container" style="margin-top: 0px;">
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div class="full-container" style="margin-top: -110px;">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
 	  <!-- Indicators 
 	  <ol class="carousel-indicators">
 		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -91,32 +104,51 @@
 	   -->
 	</div>
 </div>
-<div class="container" style="margin-top: -30px;">
-	<div style="height: 30px;">
-	</div>
-	<div class="row">
-		<div class="col-sm-3 col-xs-6 slide-nav">
-			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="0">
-			Build the network
+<div style="margin-top: -50px; min-height: 500px;">
+	<div style="margin: 0 15px;">
+		<div class="row">
+			<div class="col-sm-3 slide-nav">
+				<div class="nav-mark active">
+				</div>
+				<div class="nav-link text-center option" data-target="#carousel-example-generic" data-slide-to="0">
+				Build the network
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 col-xs-6 slide-nav">
-			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="1">
-			Growing with us
+			<div class="col-sm-3 slide-nav">
+				<div class="nav-mark inactive">
+				</div>
+				<div class="nav-link text-center option" data-target="#carousel-example-generic" data-slide-to="1">
+				Growing with us
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 col-xs-6 slide-nav">
-			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="2">
-			Be different
+			<div class="col-sm-3 slide-nav">
+				<div class="nav-mark inactive">
+				</div>
+				<div class="nav-link text-center option" data-target="#carousel-example-generic" data-slide-to="2">
+				Let your creativity flow
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3 col-xs-6 slide-nav">
-			<div class="active text-center" data-target="#carousel-example-generic" data-slide-to="3">
-			Let your creativity flow
+			<div class="col-sm-3 slide-nav">
+				<div class="nav-mark inactive">
+				</div>
+				<div class="nav-link text-center option" data-target="#carousel-example-generic" data-slide-to="3">
+				Be different
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+$('.nav-link').on('click', function(){
+	$('.nav-link').each(function(){
+		$this = $(this).parent().find('.nav-mark');
+		if($this.hasClass('active'))
+		{ $this.removeClass('active').addClass('inactive'); }
+	});
+
+	$(this).parent().find('.nav-mark').removeClass('inactive').addClass('active');
+});
+</script>
 {% endblock content_row %}
 
 {% block footer %}
